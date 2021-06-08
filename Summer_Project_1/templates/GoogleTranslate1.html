@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        /* h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        } */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+    <title>
+        Google Translate Summary
+    </title>
+</head>
+
+<body style="background-color:rgb(137, 220, 231);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;">
+    <h1>Summary and Translate</h1>
+    <p>Hello, please enter the following: </p>
+    <form action="#" method="post">
+        <p>
+            <label for="url">URL resource:</label>
+            <input type="text" name="url" size=50 />
+        </p>
+        <p>
+            <label for="original language">Original Language:</label>
+            <select id="original language" name="original language" style="width:200px">
+
+                {% for item in langs %}
+                <option value="{{ item|string }}">{{item}}</option>
+                {% endfor %}
+            </select>
+        <p>
+            <label for="final language">Final Language:</label>
+            <select id="final language" name="final language" style="width:200px">
+
+                {% for item in langs %}
+                <option value="{{ item|string }}">{{item}}</option>
+                {% endfor %}
+            </select>
+
+            <!--
+                <input type = "text" name = "final language"/></p>
+                -->
+        <p><input type="submit" value="submit" /></p>
+    </form>
+    <p>{{url}}</p>
+    <p>{{orig_lang}}</p>
+    <p>
+        <textarea id='hi' name="translationFrom" value="{{translationFrom|string}}" rows="10"
+            cols="30">{{translationFrom}}</textarea>
+    </p>
+    <p>{{final_lang}}</p>
+    <p>
+        <textarea id='hi' name="translationTo" value="{{translationTo|string}}" rows="10"
+            cols="30">{{translationTo}}</textarea>
+    </p>
+    <script>
+            // var select = document.querySelector('select');
+            // var languages = '{{ langs|list }}'
+            // languages.forEach(function(lang) {
+            //     var opt = document.createElement('option');
+            //     opt.innerHTML = lang;
+            //     opt.value = lang;
+            //     select.appendChild(opt);
+            // })
+
+    </script>
+</body>
+
+</html>
