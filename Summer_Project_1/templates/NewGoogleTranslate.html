@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: black;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        body {
+            background-color: gray; 
+        }
+
+        p {
+            margin-left: 100px;
+        }
+        
+        h1 {
+            text-align: center
+        }
+    </style>
+    <title>
+        Google Translate Summary 
+    </title>
+    </head>
+    <body>
+        <h1>Summary and Translate</h1> 
+        <form action = "#" method = "post">
+            <p>{{orig_key}}</p>
+            <p>
+                <textarea name = "original_translation" id = "original" value = "original_translation" 
+                rows = 50 cols = 100>{{original_translation}}</textarea>
+            </p>
+            <p>{{final_key}}</p>
+            <!-- <p>{{final_translation}}</p> --> 
+            <p>
+                <textarea name = "final_translation" id = "final" value = "final_translation" 
+                rows = 50 cols = 100>{{final_translation}}</textarea>
+            </p>
+            <p><input type = "submit" value = "post"/></p>
+        </form>
+    </body>
+</html>

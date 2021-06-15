@@ -1,6 +1,55 @@
 <!doctype html>
 <html>
 <head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: black;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        body {
+            background-color: gray; 
+        }
+
+        p {
+            margin-left: 100px;
+        }
+        
+        h1 {
+            text-align: center
+        }
+    </style>
     <title>
         Google Translate Summary 
     </title>
@@ -9,14 +58,64 @@
         <h1>Summary and Translate</h1> 
         <p>hello</p>
         <form action = "#" method = "post">
-            <p><input type = "text" name = "url" /></p>
-            <p><input type = "text" name = "original language"/></p>
-            <p><input type = "text" name = "final language"/></p>
+            <p><label for = "url">URL <br></label>
+                <input type = "text" name = "url" /></p>
+            <p><label for = "original language">Original Language <br></label>
+                <!-- <input type = "text" name = "original language"/></p> -->
+                <select name="original language">
+                    {% for cur_lang in lang_list %} 
+                        <option value="{{cur_lang|string}}">{{cur_lang}}</option> 
+                    {% endfor %}</select></p>
+            <!-- <p><label for = "final language">Final Language</label>
+                <input type = "text" name = "final language"/></p> -->
+            <p><label for = "final language">Final Language <br></label>
+                <select name="final language">
+                {% for cur_lang in lang_list %} 
+                    <option value="{{cur_lang|string}}">{{cur_lang}}</option> 
+                {% endfor %}</select></p>
+            <p><label for = "content">Title <br></label>
+                <input type = "text" name = "title"></p> 
+            <p><label for = "excerpt">Excerpt <br></label>
+                <input type = "text" name = "excerpt"></p> 
+            <p><label for = "image">Image Link <br></label>
+                <input type = "text" name = "image"></p> 
             <p><input type = "submit" value = "submit"/></p>
         </form>
+
+        <form action = "#" method = "put">
+            <p><input type = "submit" value = "submit"/></p>
+            <p>
+                <textarea name = "original_translation" id = "original" value = "original_translation" 
+                rows = 50 cols = 100>{{original_translation}}</textarea>
+            </p>
+            <p>{{final_key}}</p>
+            <!-- <p>{{final_translation}}</p> --> 
+            <p>
+                <textarea name = "final_translation" id = "final" value = "final_translation" 
+                rows = 50 cols = 100>{{final_translation}}</textarea>
+            </p>
+        </form>
+        <!-- <p>{{lang_list}}</p>
         <p>{{url}}</p>
         <p>{{orig_lang}}</p>
-        <p>{{final_lang}}</p> 
-        <p>{{translation}}</p>
+        <p>{{final_lang}}</p> -->
+        <p>{{excerpt}}</p>
+        <p><img src= "{{image|string}}"></p>
+        <p>{{title}}</p> 
+        <!-- <p>{{orig_key}}</p> -->
+        <!-- <p>{{original_translation}}</p> --> 
+        <!-- <p>
+            <textarea name = "original_translation" id = "original" value = "original_translation" 
+            rows = 50 cols = 100>{{original_translation}}</textarea>
+        </p>
+    -->
+       <!-- <p>{{final_key}}</p> -->
+        <!-- <p>{{final_translation}}</p> --> 
+        <!--
+        <p>
+            <textarea name = "final_translation" id = "final" value = "final_translation" 
+            rows = 50 cols = 100>{{final_translation}}</textarea>
+        </p>
+    -->
     </body>
 </html>
