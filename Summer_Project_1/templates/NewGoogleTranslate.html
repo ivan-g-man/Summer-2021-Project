@@ -56,8 +56,9 @@
     </head>
     <body>
         <h1>Summary and Translate</h1> 
+
         <form action = "#" method = "post">
-            <p>{{orig_key}}</p>
+            <p><input type = "submit" value = "post" name = "post"/></p>
             <p>
                 <textarea name = "original_translation" id = "original" value = "original_translation" 
                 rows = 50 cols = 100>{{original_translation}}</textarea>
@@ -68,7 +69,6 @@
                 <textarea name = "final_translation" id = "final" value = "final_translation" 
                 rows = 50 cols = 100>{{final_translation}}</textarea>
             </p>
-            <p><input type = "submit" value = "post"/></p>
         </form>
     </body>
 </html>

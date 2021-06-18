@@ -79,22 +79,30 @@
                 <input type = "text" name = "excerpt"></p> 
             <p><label for = "image">Image Link <br></label>
                 <input type = "text" name = "image"></p> 
-            <p><input type = "submit" value = "submit"/></p>
-        </form>
-
-        <form action = "#" method = "put">
-            <p><input type = "submit" value = "submit"/></p>
             <p>
                 <textarea name = "original_translation" id = "original" value = "original_translation" 
                 rows = 50 cols = 100>{{original_translation}}</textarea>
             </p>
-            <p>{{final_key}}</p>
-            <!-- <p>{{final_translation}}</p> --> 
             <p>
                 <textarea name = "final_translation" id = "final" value = "final_translation" 
                 rows = 50 cols = 100>{{final_translation}}</textarea>
-            </p>
+            </p>    
+            <p><input type = "submit" value = "submit" name = "submit"/></p>
         </form>
+
+        <!-- <form action = "#" method = "post">
+            <p><input type = "submit" value = "post" name = "post"/></p>
+            <p>
+                <textarea name = "original_translation" id = "original" value = "original_translation" 
+                rows = 50 cols = 100>{{original_translation}}</textarea>
+            </p>
+            <p>{{final_key}}</p> -->
+            <!-- <p>{{final_translation}}</p> --> 
+<!--        <p>
+                <textarea name = "final_translation" id = "final" value = "final_translation" 
+                rows = 50 cols = 100>{{final_translation}}</textarea>
+            </p>
+        </form> -->
         <!-- <p>{{lang_list}}</p>
         <p>{{url}}</p>
         <p>{{orig_lang}}</p>
