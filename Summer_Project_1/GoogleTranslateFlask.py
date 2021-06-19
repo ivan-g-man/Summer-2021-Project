@@ -124,7 +124,7 @@ def new_page_stuff():
         if request.form.get("post"): #post button
             post_api1(session["my_excerpt"], session["image_link"], request.form["original_translation"], 
             session["my_title"], session["user_orig_lang"])
-            return render_template("GoogleTranslate.html", lang_list = my_lang_list)
+            return redirect(url_for("translate"))
     else:
         return render_template("NewGoogleTranslate.html", url = request.args["url"],  
         orig_lang = request.args["orig_lang"], final_lang = request.args["final_lang"], 
